@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapcsolat</title>
+    <link rel="stylesheet" href="beadando-kapcsolat.css">
+</head>
+<body>
+            <h1 id="fejlec">Épületvillamosság és ami mögötte van…</h1>
+    <div class="container">
+        <header>
+            <h1><img src="img/VM-PNG.png" alt="Logo" width="250" /></h1>
+            <button class="menu-toggle" aria-label="Menü megnyitása">&#9776;</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Főoldal</a></li>
+                    <li><a href="beadando-rolunk.html">Rólunk</a></li>
+                    <li><a href="beadando-tevekenysegek.html">Tevékenységek</a></li>
+                    <li><a href="beadando-szakteruletek.html">Szakterületek</a></li>
+                    <li><a href="beadando-kapcsolat.html">Kapcsolat</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <h1>Kérdése van? Ajánlatot kérne?</h1>
+        <h2>Vegye fel velünk a kapcsolatot elérhetőségeinken!</h2>
+
+        <div class="kapcsolatcontainer">
+            <div class="leftside">
+                <h3>Székhely</h3>
+                <p>1117, Budapest, Nádorliget utca 8/C 1/13</p>
+
+                <h3>E-mail</h3>
+                <a href="mailto:iroda@vilometric.hu">iroda@vilometric.hu</a>
+
+                <h3>Telefon</h3>
+                <a href="tel:+36201234567">+36201234567</a>
+
+                <h3>Nyitvatartás</h3>
+                <table border="1">
+                    <tr><th>Hétfő</th><td>8:00 - 16:00</td></tr>
+                    <tr><th>Kedd</th><td>8:00 - 16:00</td></tr>
+                    <tr><th>Szerda</th><td>8:00 - 16:00</td></tr>
+                    <tr><th>Csütörtök</th><td>8:00 - 16:00</td></tr>
+                    <tr><th>Péntek</th><td>8:00 - 16:00</td></tr>
+                </table>
+            </div>
+
+            <div class="rightside">
+                <h3>Online üzenet küldés</h3>
+                <p>Igyekszünk a lehető leghamarabb válaszolni az üzenetekre.</p>
+                <form action="urlap" id="urlap">
+                    <label for="nev">Név <sup>*</sup>:</label>
+                    <input type="text" name="nev" id="nev" placeholder="Név" required />
+
+                    <label for="email">E-mail cím <sup>*</sup></label>
+                    <input type="email" name="email" id="email" placeholder="E-mail cím" required />
+
+                    <label for="targy">Tárgy:</label>
+                    <input type="text" name="targy" id="targy" placeholder="Tárgy" />
+
+                    <label for="uzenet">Üzenet:</label>
+                    <textarea name="uzenet" id="uzenet"></textarea>
+
+                    <p><i>A csillaggal megjelölt mezők kitöltése kötelező!</i></p>
+
+                    <div id="adatkezeles">
+                        <input type="checkbox" name="adat" id="adat" />
+                        <label for="adat">Az adatkezelési tájékozatót elfogadom.</label>
+                    </div>
+
+                    <button type="submit">Küldés</button>
+                </form>
+
+                <p id="visszajelzes" style="display: none; color: green;">
+                    Üzenet elküldve!
+                </p>
+            </div>
+        </div>
+
+        <div id="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2697.169438019365!2d19.042939896633612!3d47.46712752328619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dda5aa7107db%3A0x1813cf52598a976a!2sVilometric%20M%C3%A9rn%C3%B6kiroda%20Kft.!5e0!3m2!1shu!2shu!4v1748182438856!5m2!1shu!2shu"
+                height="650"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Cég helye térképen"
+            ></iframe>
+        </div>
+
+        <footer>
+            <div><img src="img/logofb.png" alt="fblogo" style="cursor: pointer;" width="50px" /></div>
+            <div><img src="img/logoinsta.png" alt="instlogo" style="cursor: pointer;" width="50px" /></div>
+            <div><img src="img/logotw.png" alt="twlogo" style="cursor: pointer;" width="50px" /></div>
+            <div><img src="img/logotiktok.png" alt="ttlogo" style="cursor: pointer;" width="50px" /></div>
+        </footer>
+    </div> 
+</body>
+<script src="index.js"></script>
+<script src="beadando-kapcsolat.js"></script>
+</html>

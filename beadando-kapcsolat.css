@@ -1,0 +1,414 @@
+/*----------------------------*/
+/* Alap beállítások*/
+/*----------------------------*/
+body {
+    color: #FFFFFF;
+    background-color: rgb(52, 73, 94);
+    font-family: Arial, Helvetica, sans-serif;
+    width: 95%;
+    margin: 0 auto;
+}
+
+#fejlec {
+    background-image: url(img/VMh1foldal-1.jpg);
+    padding: 130px;
+    font-size: xx-large;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*----------------------------*/
+/* Layout: header, main, footer */
+/*----------------------------*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F39C12;
+    border-radius: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: solid 1px black;
+    position: relative; 
+}
+
+main {
+    display: flex;
+    gap: 40px;
+    padding: 30px;
+    text-align: justify;
+    flex-wrap: nowrap;
+}
+
+main section {
+    flex: 2;
+    overflow-wrap: break-word;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+main section h1 {
+    color: #F39C12;
+    margin-bottom: 20px;
+}
+
+main aside {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main aside img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    object-fit: cover;
+}
+
+footer {
+    background-color: #F39C12;
+    color: black;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly; 
+    border: solid 1px black;
+}
+
+/*----------------------------*/
+/* Navigáció - desktop */
+/*----------------------------*/
+header nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    font-size: x-large;
+    background-color: #F39C12;
+    color: black;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+nav li a {
+    display: inline-block;
+    transition: all 1s ease;
+    color: black;
+    background-color: #F39C12;
+    padding: 10px;
+}
+
+nav li:hover a {
+    transform: rotateX(360deg) scale(1.2);
+    color: #F39C12;
+    background-color: rgb(52, 73, 94);
+    border-radius: 5px;
+}
+
+/*----------------------------*/
+/* Egyéb komponensek */
+/*----------------------------*/
+nav a, section a, article a {
+    text-decoration: none;
+}
+
+header h1 img {
+    padding-left: 5px;
+    transition: all 0.8s ease;
+}
+
+header h1 img:hover {
+    transform: rotateX(360deg) scale(1.1) translateX(10px);
+}
+
+/*----------------------------*/
+/* Hamburger menü*/
+/*----------------------------*/
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+}
+
+
+/*----------------------------*/
+/* Media query-k */
+/*----------------------------*/
+
+/* Mobil nézet (max-width: 480px) */
+@media (max-width: 480px) {
+    .card-list li {
+        flex: 1 1 100%;
+    }
+
+    #fejlec {
+        padding: 60px;
+        font-size: large;
+    }
+
+    header h1 img {
+        width: 180px;
+    }
+}
+
+/* Mobil + tablet nézet (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Layout átrendezés */
+    main {
+        flex-direction: column;
+    }
+
+    main section, main aside {
+        padding: 20px;
+    }
+
+    main aside img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        display: block;
+        margin-top: 20px;
+        border-radius: 6px;
+    }
+
+    /* Header átrendezés */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    /* Menü toggle megjelenítése */
+    .menu-toggle {
+        display: block;
+        z-index: 1100;
+        position: relative;
+    }
+
+    /* Nav alapból rejtett */
+    header nav {
+        display: none;
+        flex-direction: column;
+        background-color: rgb(52, 73, 94);
+        position: absolute;
+        top: 60px;
+        right: 30px;
+        border-radius: 5px;
+        padding: 10px 20px;
+        width: 200px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        z-index: 1000;
+    }
+
+    /* Nyitott nav */
+    header nav.open {
+        display: flex;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    header nav ul li {
+        font-size: large;
+    }
+
+    /* Menü linkek szélesség */
+    nav li a {
+        width: 100%;
+        text-align: left;
+        padding: 10px 15px;
+        background-color: rgb(52, 73, 94);
+        color: white;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 768px) {
+  header nav ul {
+    background-color: transparent !important;
+  }
+
+    header nav ul li a:hover {
+    background-color: #F39C12;
+    color: black;
+    border-radius: 5px;
+  }
+}
+
+/* Köztes nézet (min-width: 769px és max-width: 1264px) */
+@media (min-width: 769px) and (max-width: 1264px) {
+    header ul {
+        gap: 20px;
+        font-size: 1rem;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+
+    header ul li {
+        flex: 0 1 auto; 
+    }
+}
+
+@media (max-width: 1264px) {
+  .card-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    flex: 1 1 45%; 
+    max-width: 500px;
+    margin: 20px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 100%;
+  }
+}
+
+/* Űrlap */
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+form input, textarea, button {
+    width: 100%; 
+    max-width: 100%; 
+    box-sizing: border-box; 
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+button {
+    background-color: #F39C12;
+    font-size: larger;
+    border-radius: 5px;
+}
+
+#adatkezeles {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+#adatkezeles input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin: 0;
+  vertical-align: middle;
+}
+
+#adatkezeles label {
+  flex: 1;
+  white-space: normal;
+}
+
+
+/* Térkép */
+#map {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  padding-bottom: 30px;
+  overflow-x: auto; /* ha nagyon muszáj */
+}
+
+#map iframe {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+/* Flex elrendezések */
+.kapcsolatcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; 
+    justify-content: center; 
+    align-items: flex-start;
+    margin: 40px 0;
+}
+
+.kapcsolatcontainer h3 {
+    color: #F39C12;
+}
+
+.rightside {
+    background-color: rgba(243, 156, 18, 0.15);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+    flex: 1 1 400px;
+    max-width: 500px;
+}
+
+.leftside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #34495e;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+    background-color: rgba(243, 156, 18, 0.15);
+}
+
+.leftside a[href^="mailto"], .leftside a[href^="tel"] {
+  color: inherit;
+  text-decoration: none;
+}
+
+.leftside:hover, .rightside:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* Mobilbarát egymás alá törés */
+@media (max-width: 768px) {
+  .kapcsolatcontainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

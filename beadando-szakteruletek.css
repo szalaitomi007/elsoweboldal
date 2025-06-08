@@ -1,0 +1,312 @@
+/*----------------------------*/
+/* Alap beállítások*/
+/*----------------------------*/
+body {
+    color: #FFFFFF;
+    background-color: rgb(52, 73, 94);
+    font-family: Arial, Helvetica, sans-serif;
+    width: 95%;
+    margin: 0 auto;
+}
+
+#fejlec {
+    background-image: url(img/VMh1foldal-1.jpg);
+    padding: 130px;
+    font-size: xx-large;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*----------------------------*/
+/* Layout: header, main, footer */
+/*----------------------------*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F39C12;
+    border-radius: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: solid 1px black;
+    position: relative; 
+}
+
+h2 {
+    color:#F39C12
+}
+
+footer {
+    background-color: #F39C12;
+    color: black;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly; 
+    border: solid 1px black;
+}
+
+/*----------------------------*/
+/* Navigáció - desktop */
+/*----------------------------*/
+header nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    font-size: x-large;
+    background-color: #F39C12;
+    color: black;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+nav li a {
+    display: inline-block;
+    transition: all 1s ease;
+    color: black;
+    background-color: #F39C12;
+    padding: 10px;
+}
+
+nav li:hover a {
+    transform: rotateX(360deg) scale(1.2);
+    color: #F39C12;
+    background-color: rgb(52, 73, 94);
+    border-radius: 5px;
+}
+
+/*----------------------------*/
+/* Egyéb komponensek */
+/*----------------------------*/
+nav a, section a, article a {
+    text-decoration: none;
+}
+
+header h1 img {
+    padding-left: 5px;
+    transition: all 0.8s ease;
+}
+
+header h1 img:hover {
+    transform: rotateX(360deg) scale(1.1) translateX(10px);
+}
+
+
+/*----------------------------*/
+/* Hamburger menü*/
+/*----------------------------*/
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+}
+
+/*----------------------------*/
+/* Media query-k */
+/*----------------------------*/
+
+/* Mobil nézet (max-width: 480px) */
+@media (max-width: 480px) {
+    .card-list li {
+        flex: 1 1 100%;
+    }
+
+    #fejlec {
+        padding: 60px;
+        font-size: large;
+    }
+
+    header h1 img {
+        width: 180px;
+    }
+}
+
+/* Mobil + tablet nézet (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Layout átrendezés */
+    main {
+        flex-direction: column;
+    }
+
+    main section, main aside {
+        padding: 20px;
+    }
+
+    main aside img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        display: block;
+        margin-top: 20px;
+        border-radius: 6px;
+    }
+
+    /* Header átrendezés */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    /* Menü toggle megjelenítése */
+    .menu-toggle {
+        display: block;
+        z-index: 1100;
+        position: relative;
+    }
+
+    /* Nav alapból rejtett */
+    header nav {
+        display: none;
+        flex-direction: column;
+        background-color: rgb(52, 73, 94);
+        position: absolute;
+        top: 60px;
+        right: 30px;
+        border-radius: 5px;
+        padding: 10px 20px;
+        width: 200px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        z-index: 1000;
+    }
+
+    /* Nyitott nav */
+    header nav.open {
+        display: flex;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    header nav ul li {
+        font-size: large;
+    }
+
+    /* Menü linkek szélesség */
+    nav li a {
+        width: 100%;
+        text-align: left;
+        padding: 10px 15px;
+        background-color: rgb(52, 73, 94);
+        color: white;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 768px) {
+  header nav ul {
+    background-color: transparent !important;
+  }
+
+    header nav ul li a:hover {
+    background-color: #F39C12;
+    color: black;
+    border-radius: 5px;
+  }
+}
+
+/* Köztes nézet (min-width: 769px és max-width: 1264px) */
+@media (min-width: 769px) and (max-width: 1264px) {
+    header ul {
+        gap: 20px;
+        font-size: 1rem;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+
+    header ul li {
+        flex: 0 1 auto; 
+    }
+}
+
+@media (max-width: 1264px) {
+  .card-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    flex: 1 1 45%; 
+    max-width: 500px;
+    margin: 20px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 100%;
+  }
+}
+
+/* Kártyás szerkezet */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  justify-items: center;
+  margin-bottom: 40px;
+}
+
+.card {
+  background-color: rgba(243, 156, 18, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  padding: 30px 25px;
+  flex: 1 1 300px;
+  max-width: 400px;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+  color: #F39C12;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.card ul {
+  padding-left: 1.2em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  list-style-type: disc;
+}
+
+.card ul li {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
